@@ -25,4 +25,12 @@ function sendOnboardingEmail(applicantEmail) {
     }, function(error) {
         alert("❌ Error: " + JSON.stringify(error));
     });
-}
+} document.getElementById("applyForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("applicantEmail").value;
+    localStorage.setItem("latestApplicantEmail", email);
+
+    alert("✅ Application submitted! Email saved for approval.");
+});
+
