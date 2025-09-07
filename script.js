@@ -1,42 +1,28 @@
-// Handle form submission
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("applyForm");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-      let apps = JSON.parse(localStorage.getItem("applications") || "[]");
-      apps.push(data);
-      localStorage.setItem("applications", JSON.stringify(apps));
-      window.location.href = "apply-success.html";
-    });
-  }
+// ✅ Initialize EmailJS
+(function() {
+    emailjs.init("vhgTnq8riUK29JBK6"); // Your Public Key
+})();
+
+// ✅ Handle Application Form
+document.getElementById("applyForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_2bhwn1u", "template_jqo8csc", this)
+        .then(function() {
+            alert("✅ Application submitted successfully!");
+            document.getElementById("applyForm").reset();
+        }, function(error) {
+            alert("❌ Error: " + JSON.stringify(error));
+        });
 });
 
-// Admin login
-function adminLogin() {
-  const user = document.getElementById("adminUser").value;
-  const pass = document.getElementById("adminPass").value;
-  if (user === "JasmineFuqua73" && pass === "Delivery123$") {
-    document.getElementById("loginSection").style.display = "none";
-    document.getElementById("dashboard").style.display = "block";
-    loadApplications();
-  } else {
-    document.getElementById("loginMessage").innerText = "Invalid login";
-  }
-}
-
-function adminLogout() {
-  document.getElementById("dashboard").style.display = "none";
-  document.getElementById("loginSection").style.display = "block";
-}
-
-function loadApplications() {
-  let apps = JSON.parse(localStorage.getItem("applications") || "[]");
-  const tbody = document.querySelector("#appsTable tbody");
-  tbody.innerHTML = "";
-  apps.forEach(app => {
-    const row = `<tr><td>${app.name}</td><td>${app.email}</td><td>${app.phone}</td><td>${app.license}</td><td>${app.vehicle}</td><td>${app.emergency}</td></tr>`;
-    tbody.innerHTML += row;
-  });
+// ✅ Handle Onboarding Approval Button
+function sendOnboardingEmail(applicantEmail) {
+    emailjs.send("service_2bhwn1u", "template_3ffr751", {
+        email: applicantEmail
+    }).then(function() {
+        alert("✅ Onboarding packet sent to " + applicantEmail);
+    }, function(error) {
+        alert("❌ Error: " + JSON.stringify(error));
+    });
 }
