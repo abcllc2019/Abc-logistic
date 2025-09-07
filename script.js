@@ -34,3 +34,23 @@ function sendOnboardingEmail(applicantEmail) {
     alert("✅ Application submitted! Email saved for approval.");
 });
 
+function sendOnboardingEmail() {
+    const email = localStorage.getItem("latestApplicantEmail");
+
+    if (!email) {
+        alert("⚠️ No applicant email found. Please make sure someone applied first.");
+        return;
+    }
+
+    emailjs.send("service_2bhwn1u", "template_jqo8csc", {
+        to_email: email,
+        from_name: "ABC Logistic LLC",
+    }, "vhgTnq8riUK29JBK6")
+    .then(function(response) {
+        alert("✅ Onboarding email sent to " + email);
+        console.log("SUCCESS", response);
+    }, function(error) {
+        alert("❌ Failed to send email. Check console for details.");
+        console.log("FAILED", error);
+    });
+}
