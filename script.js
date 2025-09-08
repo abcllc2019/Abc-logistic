@@ -53,4 +53,22 @@ function sendOnboardingEmail() {
         alert("❌ Failed to send email. Check console for details.");
         console.log("FAILED", error);
     });
-}
+} document.getElementById("applyForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const applicant = {
+        fullname: this.fullname.value,
+        email: this.email.value,
+        phone: this.phone.value,
+        license: this.license.value
+    };
+
+    // Save applicants in localStorage
+    let applicants = JSON.parse(localStorage.getItem("applicants")) || [];
+    applicants.push(applicant);
+    localStorage.setItem("applicants", JSON.stringify(applicants));
+
+    alert("✅ Application submitted successfully!");
+    this.reset();
+});
+
