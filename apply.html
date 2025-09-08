@@ -6,47 +6,49 @@
   <title>Apply - ABC Logistic LLC</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Header -->
-  <header>
-    <img src="logo.png" alt="ABC Logistic Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="apply.html" class="active">Apply</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<body class="apply-page">
+  <div class="apply-overlay"></div>
 
-  <!-- Application Section -->
   <main>
-    <h1>Driver Application</h1>
-    <p><strong>Requirements – must have to be considered:</strong></p>
-    <ul>
-      <li>Driver’s License</li>
-      <li>Car Insurance</li>
-      <li>Vehicle Registration</li>
-      <li>Social Security Card or ITIN Number</li>
-      <li>Contact Number</li>
-      <li>Emergency Number</li>
-    </ul>
+    <form action="https://formspree.io/f/mwpnawjg" method="POST" class="application-form">
+      <h1>Driver Application</h1>
+      <p>Please complete all fields below. All are required to be considered for a position.</p>
 
-    <form action="apply-success.html" method="POST" class="apply-form">
-      <label>Full Name</label>
-      <input type="text" name="fullname" required>
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="Full Name" required>
 
-      <label>Email Address</label>
-      <input type="email" name="email" required>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email" required>
 
-      <label>Phone Number</label>
-      <input type="tel" name="phone" required>
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="Phone Number" required>
 
-      <label>Driver’s License #</label>
-      <input type="text" name="license" required>
+      <label for="license">Driver’s License #</label>
+      <input type="text" id="license" name="Driver’s License" required>
 
-      <label>Vehicle Type</label>
-      <select name="vehicle">
-        <option value="car">Small Car</option>
-       
+      <label for="vehicle">Vehicle Type</label>
+      <select id="vehicle" name="Vehicle Type" required>
+        <option value="">-- Select Vehicle --</option>
+        <option>Small Car</option>
+        <option>SUV</option>
+        <option>Pickup Truck</option>
+        <option>Cargo Van</option>
+      </select>
+
+      <label for="ssn">Social Security Card or ITIN Number</label>
+      <input type="text" id="ssn" name="SSN or ITIN" required>
+
+      <label for="emergency">Emergency Contact Number</label>
+      <input type="text" id="emergency" name="Emergency Contact" required>
+
+      <div style="margin-top:20px;">
+        <button type="submit" class="btn">Submit Application</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ABC Logistic LLC. All rights reserved.</p>
+  </footer>
+</body>
+</html>
