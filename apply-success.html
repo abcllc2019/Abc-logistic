@@ -1,24 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Application Submitted</title>
-  <style>
-    body { font-family: Arial, sans-serif; background:#f4f7fb; text-align:center; padding:50px; }
-    .success { background:#fff; border-radius:12px; padding:40px; max-width:500px; margin:auto; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-    h1 { color:#2c7a2c; }
-    p { font-size:18px; }
-    a { display:inline-block; margin-top:20px; padding:12px 20px; background:#002147; color:#fff; border-radius:6px; text-decoration:none; }
-    a:hover { background:#014c8c; }
-  </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply — ABC Logistic LLC</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="success">
-    <h1>✅ Thank You!</h1>
-    <p>Your application has been submitted successfully.</p>
-    <p>We’ve saved your details. Once your application is approved, you will automatically receive your onboarding packet via email.</p>
-    <a href="index.html">⬅ Back to Home</a>
-  </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="logo.png" class="logo" alt="ABC Logistic LLC"/>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="apply.html" class="active">Apply</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="container two-col">
+    <div>
+      <h1>Driver Application</h1>
+      <p class="lead">Complete the short form below. We’ll review and reach out with onboarding steps.</p>
+
+      <h3>Requirements (must have)</h3>
+      <ul class="checklist">
+        <li>Driver’s License</li>
+        <li>Car Insurance</li>
+        <li>Vehicle Registration (photo)</li>
+        <li>SSN or ITIN</li>
+        <li>Primary Contact Number</li>
+        <li>Emergency Contact Number</li>
+      </ul>
+    </div>
+
+    <div>
+      <form id="applyForm" class="card form">
+        <h3>Apply Now</h3>
+        <label>Full Name
+          <input type="text" name="full_name" required/>
+        </label>
+        <label>Email Address
+          <input type="email" name="email" required/>
+        </label>
+        <label>Phone Number
+          <input type="tel" name="phone" required/>
+        </label>
+        <label>Driver’s License #
+          <input type="text" name="license" required/>
+        </label>
+        <label>Emergency Contact Number
+          <input type="tel" name="emergency_phone" required/>
+        </label>
+
+        <!-- Optional simple doc links (they can paste Drive/Photos links) -->
+        <label>Link to Vehicle Registration (photo)
+          <input type="url" name="reg_link" placeholder="https://..."/>
+        </label>
+        <label>Link to Insurance Card (photo)
+          <input type="url" name="ins_link" placeholder="https://..."/>
+        </label>
+
+        <button class="btn btn-primary" type="submit">Submit Application</button>
+        <p class="form-note" id="applyMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ABC Logistic LLC</div>
+    </div>
+  </footer>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){ emailjs.init("vhgTnq8riUK29JBK6"); })();
+  </script>
+  <script src="script.js"></script>
+  <script>
+    // Send application via EmailJS (to your inbox)
+    const applyForm = document.getElementById('applyForm');
+    const msg = document.getElementById('applyMsg');
+
+    applyForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      msg.textContent = "Sending…";
+
+      const data = {
+        full_name: applyForm.full_name.value,
+        email: applyForm.email.value,
+        phone: applyForm.phone.value,
+        license: applyForm.license.value,
+        emergency_phone: applyForm.emergency_phone.value,
+        reg_link: applyForm.reg_link.value || "N/A",
+        ins_link: applyForm.ins_link.value || "N/A"
+      };
+
+      try {
+        // template for application submission
+        await emailjs.send("service_2bhwn1u", "template_jqo8csc", data);
+        window.location.href = "apply-success.html";
+      } catch (err) {
+        console.error(err);
+        msg.textContent = "Sorry, something went wrong. Please try again.";
+      }
+    });
+  </script>
 </body>
 </html>
