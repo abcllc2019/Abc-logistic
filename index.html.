@@ -1,10 +1,65 @@
-<!-- Hero Section -->
-<section class="hero">
-  <img src="driver-hero.jpg" alt="Delivery Driver" class="hero-image">
-  <div class="hero-text">
-    <h1>Now Hiring Delivery Drivers</h1>
-    <p>Earn $180 – $360 per day • Flexible Shifts • Weekly Pay</p>
-    <p class="highlight">Delivering All Around Metro Detroit</p>
-    <a href="apply.html" class="btn">Apply Now</a>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABC Logistic LLC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <img src="logo.png" alt="ABC Logistic LLC Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="driver-hero.jpg" alt="Delivery Driver" class="hero-image">
+    <div class="hero-text">
+      <h1>Now Hiring Delivery Drivers</h1>
+      <p>Earn $180 – $360 per day • Flexible Shifts • Weekly Pay</p>
+      <p class="highlight">📍 Delivering All Around Metro Detroit</p>
+      <a href="apply.html" class="btn">Apply Now</a>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="services">
+    <h2>📍 Our Service Areas</h2>
+    <p>We proudly deliver all around Metro Detroit, including:</p>
+    <ul>
+      <li>Romulus</li>
+      <li>Warren</li>
+      <li>Saint Clair Shores</li>
+      <li>Novi</li>
+      <li>Brighton</li>
+      <li>Surrounding Cities</li>
+    </ul>
+  </section>
+
+  <!-- Preferred Vehicles -->
+  <section class="vehicles">
+    <h2>🚗 Preferred Vehicles</h2>
+    <p>We welcome drivers with the following vehicles:</p>
+    <ul>
+      <li>Small Cars</li>
+      <li>SUVs</li>
+      <li>Pickup Trucks</li>
+      <li>Cargo Vans</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ABC Logistic LLC • All Rights Reserved</p>
+  </footer>
+</body>
+</html>
