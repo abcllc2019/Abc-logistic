@@ -1,0 +1,10 @@
+<!-- Hero Section -->
+<section class="hero">
+  <img src="driver-hero.jpg" alt="Delivery Driver" class="hero-image">
+  <div class="hero-text">
+    <h1>Now Hiring Delivery Drivers</h1>
+    <p>Earn $180 – $360 per day • Flexible Shifts • Weekly Pay</p>
+    <p class="highlight">Delivering All Around Metro Detroit</p>
+    <a href="apply.html" class="btn">Apply Now</a>
+  </div>
+</section>
