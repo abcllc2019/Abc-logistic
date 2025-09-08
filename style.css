@@ -131,3 +131,52 @@ footer {
   padding: 15px;
   margin-top: 20px;
 }
+/* Apply Page */
+.small-hero {
+  height: 40vh;
+}
+
+.apply-form-section {
+  padding: 50px 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.apply-form-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #002147;
+}
+
+.apply-form-section p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.application-form label {
+  font-weight: bold;
+  color: #002147;
+}
+
+.application-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.application-form button {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
