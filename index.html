@@ -8,166 +8,51 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="header">
+  <header class="site-header">
     <img src="logo.png" alt="ABC Logistic LLC Logo" class="logo">
     <nav>
-      <ul class="nav-links">
-        <li><a href="#apply">Apply</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="apply.html">Apply</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <img src="driver-hero.png.jpeg" alt="Delivery Driver" class="hero-image">
-    <div class="hero-text">
+    <div class="hero-content">
       <h1>Now Hiring Delivery Drivers</h1>
       <p>Earn $180 – $360 per day • Flexible Shifts • Weekly Pay</p>
-      <p class="service-banner">📍 Delivering All Around Metro Detroit</p>
-      <a href="#apply" class="cta-button">Apply Now</a>
+      <h2 class="metro">Delivering All Around Metro Detroit</h2>
+      <a href="apply.html" class="btn">Apply Now</a>
     </div>
   </section>
 
-  <!-- Service Areas -->
-  <section class="service-areas">
-    <h2>📍 Our Service Areas</h2>
+  <!-- Info Section -->
+  <section class="info">
+    <h2>📍 Service Areas</h2>
     <p>We proudly deliver all around Metro Detroit, including:</p>
-    <div class="service-grid">
-      <div class="service-card">Romulus</div>
-      <div class="service-card">Warren</div>
-      <div class="service-card">Saint Clair Shores</div>
-      <div class="service-card">Novi</div>
-      <div class="service-card">Brighton</div>
-      <div class="service-card">Surrounding Cities</div>
-    </div>
-  </section>
+    <ul>
+      <li>Romulus</li>
+      <li>Warren</li>
+      <li>Saint Clair Shores</li>
+      <li>Novi</li>
+      <li>Brighton</li>
+      <li>Surrounding Cities</li>
+    </ul>
 
-  <!-- Preferred Vehicles -->
-  <section class="vehicles">
     <h2>🚗 Preferred Vehicles</h2>
-    <p>We welcome drivers with the following vehicles:</p>
-    <div class="vehicle-grid">
-      <div class="vehicle-card">🚘 Small Cars</div>
-      <div class="vehicle-card">🚙 SUVs</div>
-      <div class="vehicle-card">🛻 Pickup Trucks</div>
-      <div class="vehicle-card">🚐 Cargo Vans</div>
-    </div>
-  </section>
-
-  <!-- Apply Section -->
-  <section id="apply" class="apply-section">
-    <h2>Apply Now</h2>
-    <form class="apply-form">
-      <label>Full Name</label>
-      <input type="text" name="fullName" required>
-
-      <label>Email Address</label>
-      <input type="email" name="email" required>
-
-      <label>Phone Number</label>
-      <input type="text" name="phone" required>
-
-      <label>Driver’s License #</label>
-      <input type="text" name="driversLicense" required>
-
-      <label>Car Insurance</label>
-      <input type="text" name="insurance" required>
-
-      <label>Vehicle Registration</label>
-      <input type="text" name="registration" required>
-
-      <label>SSN / ITIN</label>
-      <input type="text" name="ssn" required>
-
-      <label>Emergency Contact Number</label>
-      <input type="text" name="emergencyContact" required>
-
-      <button type="submit">Submit Application</button>
-    </form>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <button class="faq-question">📦 How many packages will I deliver?</button>
-      <div class="faq-answer">
-        <p>Drivers are guaranteed a minimum of 100 packages per day. The more you deliver, the more you earn.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">💵 How much can I make?</button>
-      <div class="faq-answer">
-        <p>On average, drivers can earn between <strong>$180 - $360 per day</strong> depending on packages delivered.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">📅 When do I get paid?</button>
-      <div class="faq-answer">
-        <p>Payments are made <strong>weekly, every Friday</strong>.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">📋 What are the requirements?</button>
-      <div class="faq-answer">
-        <ul>
-          <li>Driver’s License</li>
-          <li>Car Insurance</li>
-          <li>Vehicle Registration</li>
-          <li>Social Security Number or ITIN</li>
-          <li>Emergency Contact Number</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">🚙 What vehicles are preferred?</button>
-      <div class="faq-answer">
-        <p>We accept Small Cars, SUVs, Pickup Trucks, and Cargo Vans.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">📍 Where do you deliver?</button>
-      <div class="faq-answer">
-        <p>We deliver all around Metro Detroit: Romulus, Warren, Saint Clair Shores, Novi, Brighton, and surrounding cities.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <p>📞 <a href="tel:2487215235">248-721-5235</a></p>
-    <p>📧 <a href="mailto:abcllc@abclogisticdelivery.com">abcllc@abclogisticdelivery.com</a></p>
-
-    <form class="contact-form">
-      <label>Your Name</label>
-      <input type="text" name="from_name" required>
-
-      <label>Your Email</label>
-      <input type="email" name="reply_to" required>
-
-      <label>Your Message</label>
-      <textarea name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
+    <ul>
+      <li>Small Cars</li>
+      <li>SUVs</li>
+      <li>Pickup Trucks</li>
+      <li>Cargo Vans</li>
+    </ul>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 ABC Logistic LLC</p>
+    <p>© 2025 ABC Logistic LLC • All Rights Reserved</p>
   </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
