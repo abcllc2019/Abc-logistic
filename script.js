@@ -1,74 +1,12 @@
-// ✅ Initialize EmailJS
-(function() {
-    emailjs.init("vhgTnq8riUK29JBK6"); // Your Public Key
-})();
+// Footer year
+document.getElementById('year')?.appendChild(document.createTextNode(new Date().getFullYear()));
 
-// ✅ Handle Application Form
-document.getElementById("applyForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm("service_2bhwn1u", "template_jqo8csc", this)
-        .then(function() {
-            alert("✅ Application submitted successfully!");
-            document.getElementById("applyForm").reset();
-        }, function(error) {
-            alert("❌ Error: " + JSON.stringify(error));
-        });
+// Earnings estimator on home
+document.getElementById('calcForm')?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const pkg = Number(document.getElementById('pkgInput').value || 0);
+  const rate = 1.80; // baseline
+  const estimate = pkg * rate;
+  const out = document.getElementById('calcOut');
+  out.textContent = isFinite(estimate) ? `≈ $${estimate.toFixed(2)} for ${pkg} packages` : '';
 });
-
-// ✅ Handle Onboarding Approval Button
-function sendOnboardingEmail(applicantEmail) {
-    emailjs.send("service_2bhwn1u", "template_3ffr751", {
-        email: applicantEmail
-    }).then(function() {
-        alert("✅ Onboarding packet sent to " + applicantEmail);
-    }, function(error) {
-        alert("❌ Error: " + JSON.stringify(error));
-    });
-} document.getElementById("applyForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const email = document.getElementById("applicantEmail").value;
-    localStorage.setItem("latestApplicantEmail", email);
-
-    alert("✅ Application submitted! Email saved for approval.");
-});
-
-function sendOnboardingEmail() {
-    const email = localStorage.getItem("latestApplicantEmail");
-
-    if (!email) {
-        alert("⚠️ No applicant email found. Please make sure someone applied first.");
-        return;
-    }
-
-    emailjs.send("service_2bhwn1u", "template_jqo8csc", {
-        to_email: email,
-        from_name: "ABC Logistic LLC",
-    }, "vhgTnq8riUK29JBK6")
-    .then(function(response) {
-        alert("✅ Onboarding email sent to " + email);
-        console.log("SUCCESS", response);
-    }, function(error) {
-        alert("❌ Failed to send email. Check console for details.");
-        console.log("FAILED", error);
-    });
-} document.getElementById("applyForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const applicant = {
-        fullname: this.fullname.value,
-        email: this.email.value,
-        phone: this.phone.value,
-        license: this.license.value
-    };
-
-    // Save applicants in localStorage
-    let applicants = JSON.parse(localStorage.getItem("applicants")) || [];
-    applicants.push(applicant);
-    localStorage.setItem("applicants", JSON.stringify(applicants));
-
-    alert("✅ Application submitted successfully!");
-    this.reset();
-});
-
