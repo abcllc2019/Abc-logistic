@@ -1,9 +1,36 @@
 <header style="display:flex; align-items:center; padding:10px; background:#002147; color:#fff;">
   <img src="logo.png" alt="ABC Logistic Logo" style="height:60px; margin-right:15px;">
-  <h1 style="font-size:24px; margin:0;">ABC Logistic LLC – Admin Dashboard</h1>
+  <h1 style="font-size:24px; margin:0;">ABC Logistic LLC - Admin Dashboard</h1>
 </header>
-<!-- Approve & Send Onboarding Packet Button -->
-<button onclick="sendOnboardingEmail()">
-    ✅ Approve & Send Onboarding Packet
-</button>
 
+<!-- ✅ Applicants Section -->
+<section style="padding:20px;">
+  <h2>Pending Applications</h2>
+  <div id="applicantsList"></div>
+</section>
+
+<!-- ✅ Script to Load Applicants -->
+<script>
+  // Load applicants from localStorage
+  window.onload = function() {
+    let applicants = JSON.parse(localStorage.getItem("applicants")) || [];
+    let container = document.getElementById("applicantsList");
+
+    if (applicants.length === 0) {
+      container.innerHTML = "<p>No applications yet.</p>";
+    } else {
+      applicants.forEach(applicant => {
+        container.innerHTML += `
+          <div style="border:1px solid #ddd; padding:15px; margin:10px; border-radius:8px;">
+            <p><strong>Name:</strong> ${applicant.fullname}</p>
+            <p><strong>Email:</strong> ${applicant.email}</p>
+            <p><strong>Phone:</strong> ${applicant.phone}</p>
+            <button onclick="sendOnboardingEmail('${applicant.email}')">
+              ✅ Approve & Send Onboarding Packet
+            </button>
+          </div>
+        `;
+      });
+    }
+  }
+</script>
