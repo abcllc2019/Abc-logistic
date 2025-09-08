@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — ABC Logistic LLC</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <img src="logo.png" class="logo" alt="ABC Logistic LLC"/>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="apply.html">Apply</a>
+      <a href="faq.html">FAQ</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="container two-col">
+  <div>
+    <h1>Contact Us</h1>
+    <p class="lead">Questions about routes, pay, or schedules? Send us a note.</p>
+    <p><strong>Phone:</strong> 248-721-5235<br/>
+       <strong>Email:</strong> abcllc@abclogisticdelivery.com</p>
+  </div>
+  <div>
+    <form id="contactForm" class="card form">
+      <h3>Send a Message</h3>
+      <label>Your Name
+        <input type="text" name="from_name" required/>
+      </label>
+      <label>Your Email
+        <input type="email" name="reply_to" required/>
+      </label>
+      <label>Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button class="btn btn-primary" type="submit">Send</button>
+      <p class="form-note" id="contactMsg"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">© <span id="year"></span> ABC Logistic LLC</div>
+</footer>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){ emailjs.init("vhgTnq8riUK29JBK6"); })();
+</script>
+<script src="script.js"></script>
+<script>
+  const contactForm = document.getElementById('contactForm');
+  const cmsg = document.getElementById('contactMsg');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    cmsg.textContent = "Sending…";
+    try {
+      await emailjs.send("service_2bhwn1u", "template_3ffr751", {
+        from_name: contactForm.from_name.value,
+        reply_to: contactForm.reply_to.value,
+        message: contactForm.message.value
+      });
+      cmsg.textContent = "Thanks! We’ll reply shortly.";
+      contactForm.reset();
+    } catch (err) {
+      console.error(err);
+      cmsg.textContent = "Sorry, couldn’t send. Please try again.";
+    }
+  });
+</script>
+</body>
+</html>
