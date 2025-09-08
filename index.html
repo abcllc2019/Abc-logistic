@@ -1,62 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ABC Logistic LLC – Driver Hiring</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABC Logistic LLC — Drive With Us</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Header -->
-  <header style="background:#002147; color:#fff; padding:15px; display:flex; align-items:center;">
-    <img src="logo.png" alt="ABC Logistic Logo" style="height:50px; margin-right:15px;">
-    <h1>ABC Logistic LLC</h1>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="logo.png" alt="ABC Logistic LLC" class="logo"/>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="apply.html">Apply</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section style="text-align:center; padding:60px; background:#f4f7fb;">
-    <h2>Earn $180 – $360 Per Day</h2>
-    <p>Flexible Shifts · Weekly Pay · 1099 Independent Contractor</p>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Drive With ABC Logistic LLC</h1>
+        <p class="lead">Flexible shifts. Weekly pay. Choose your schedule and build your paycheck by the number of packages you deliver.</p>
+        <a class="btn btn-primary" href="apply.html">Start Application</a>
+      </div>
+      <div class="hero-art">
+        <!-- Upload a friendly stock photo as driver-hero.jpg -->
+        <img src="driver-hero.jpg" alt="Smiling delivery driver" />
+      </div>
+    </div>
+    <div class="hero-badges">
+      <div>Weekly Pay</div>
+      <div>Flexible Shifts</div>
+      <div>1099 Contractor</div>
+    </div>
   </section>
 
-  <!-- Apply Form -->
-  <section style="max-width:600px; margin:auto; padding:30px;">
-    <h2>Apply Now</h2>
-    <form id="applyForm">
-      <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
-      <input type="email" id="email" name="email" placeholder="Email Address" required>
-      <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
-      <input type="text" id="license" name="license" placeholder="Driver's License #" required>
-      <button type="submit">Submit Application</button>
-    </form>
+  <section class="strip cta-strip">
+    <div class="container">
+      <h2>Earn $180 – $360 per day</h2>
+      <p>We provide a minimum of 100 packages per route. Your daily earnings scale with how many you deliver.</p>
+      <div class="cards three">
+        <div class="card">
+          <h3>100 Packages</h3>
+          <p class="big-amount">$180 / day</p>
+          <p>Baseline example</p>
+        </div>
+        <div class="card">
+          <h3>150 Packages</h3>
+          <p class="big-amount">$270 / day</p>
+          <p>Deliver more, earn more</p>
+        </div>
+        <div class="card">
+          <h3>200 Packages</h3>
+          <p class="big-amount">$360 / day</p>
+          <p>Top daily earnings</p>
+        </div>
+      </div>
+
+      <div class="calc">
+        <h4>Quick Earnings Estimator</h4>
+        <form id="calcForm">
+          <label>Packages Today
+            <input type="number" id="pkgInput" min="0" step="1" placeholder="e.g., 125" required>
+          </label>
+          <button class="btn btn-light" type="submit">Estimate</button>
+          <output id="calcOut"></output>
+        </form>
+        <small>Estimator uses $1.80 per package baseline. Consecutive stops to the same address add +$0.50 each.</small>
+      </div>
+    </div>
   </section>
 
-  <footer style="background:#002147; color:#fff; text-align:center; padding:15px;">
-    © 2025 ABC Logistic LLC
+  <section class="container two-col">
+    <div>
+      <h2>Service Areas</h2>
+      <p>We deliver all around the Metro Detroit area:</p>
+      <ul class="pill-list">
+        <li>Romulus</li><li>Warren</li><li>Saint Clair Shores</li>
+        <li>Novi</li><li>Brighton</li><li>Surrounding Cities</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Preferred Vehicles</h2>
+      <ul class="icon-list">
+        <li>Small Cars</li>
+        <li>SUVs</li>
+        <li>Pickup Trucks</li>
+        <li>Cargo Vans</li>
+      </ul>
+      <p>Reliable vehicle, valid license, insurance, and registration required.</p>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="container center">
+      <h2>Ready to get started?</h2>
+      <a class="btn btn-primary" href="apply.html">Apply Now</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ABC Logistic LLC</div>
+      <div class="footer-links">
+        <a href="apply.html">Apply</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("vhgTnq8riUK29JBK6"); // Your EmailJS Public Key
-    })();
-
-    document.getElementById("applyForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const email = document.getElementById("email").value;
-      localStorage.setItem("applicantEmail", email); // Save for admin page
-
-      emailjs.sendForm("service_2bhwn1u", "template_jqo8csc", this)
-        .then(function() {
-          window.location.href = "apply-success.html"; // Redirect on success
-        }, function(error) {
-          alert("❌ Error. Please try again.");
-          console.log(error);
-        });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
