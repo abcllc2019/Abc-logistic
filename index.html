@@ -5,102 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ABC Logistic LLC – Driver Hiring</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #333; }
-    header { background: #002147; color: white; padding: 15px 20px; display: flex; align-items: center; }
-    header img { height: 50px; margin-right: 15px; }
-    header h1 { font-size: 20px; margin: 0; }
-    .hero { text-align: center; background: url('https://images.unsplash.com/photo-1581091215367-59ab6b6a0da0') no-repeat center center/cover; color: white; padding: 100px 20px; }
-    .hero h2 { font-size: 36px; margin-bottom: 15px; }
-    .hero p { font-size: 20px; margin-bottom: 20px; }
-    .hero button { background: #ffcc00; border: none; padding: 15px 30px; font-size: 18px; cursor: pointer; border-radius: 6px; }
-    section { padding: 50px 20px; max-width: 900px; margin: auto; }
-    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
-    .faq h3 { margin: 0; cursor: pointer; padding: 10px; background: #eee; }
-    .faq p { display: none; padding: 10px; }
-    form { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    form input, form button { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; }
-    form button { background: #002147; color: white; border: none; cursor: pointer; font-size: 16px; }
-    footer { background: #002147; color: white; text-align: center; padding: 15px; margin-top: 40px; }
-  </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header>
-    <img src="logo.png" alt="ABC Logistic Logo">
+  <header style="background:#002147; color:#fff; padding:15px; display:flex; align-items:center;">
+    <img src="logo.png" alt="ABC Logistic Logo" style="height:50px; margin-right:15px;">
     <h1>ABC Logistic LLC</h1>
   </header>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <h2>Earn $180 – $360 per day</h2>
-    <p>Flexible Shifts · Weekly Pay · Independent Contractor</p>
-    <button onclick="document.getElementById('applyForm').scrollIntoView()">Apply Now</button>
-  </div>
-
-  <!-- About Us -->
-  <section>
-    <h2>About Us</h2>
-    <div class="card">
-      <p>ABC Logistic LLC partners with leading e-commerce companies to provide last-mile delivery. 
-      Our drivers enjoy flexible schedules, competitive pay, and weekly payments. We are dedicated 
-      to professionalism, reliability, and growth opportunities.</p>
-    </div>
-  </section>
-
-  <!-- Pay & Shifts -->
-  <section>
-    <h2>Driver Pay & Shifts</h2>
-    <div class="card">
-      <p><strong>1st Shift:</strong> $1.80 per package + $0.50 per additional package to the same address</p>
-      <p><strong>2nd Shift:</strong> $1.60 per package + $0.50 per additional package to the same address</p>
-      <p><strong>Pay Schedule:</strong> Every Friday (Weekly)</p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section>
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq card">
-      <h3 onclick="toggleFaq(this)">Do I need my own car?</h3>
-      <p>Yes. Drivers must have their own reliable vehicle, valid driver’s license, insurance, and registration.</p>
-
-      <h3 onclick="toggleFaq(this)">What shifts are available?</h3>
-      <p>1st Shift and 2nd Shift. You can choose part-time (3 days) or full-time (4 days) per week.</p>
-
-      <h3 onclick="toggleFaq(this)">Is this W2 or 1099?</h3>
-      <p>This is a 1099 independent contractor position.</p>
-
-      <h3 onclick="toggleFaq(this)">Where is the warehouse?</h3>
-      <p>Troy, MI 48083 (address provided after approval).</p>
-    </div>
+  <!-- Hero -->
+  <section style="text-align:center; padding:60px; background:#f4f7fb;">
+    <h2>Earn $180 – $360 Per Day</h2>
+    <p>Flexible Shifts · Weekly Pay · 1099 Independent Contractor</p>
   </section>
 
   <!-- Apply Form -->
-  <section>
+  <section style="max-width:600px; margin:auto; padding:30px;">
     <h2>Apply Now</h2>
     <form id="applyForm">
-      <input type="text" name="fullname" placeholder="Full Name" required>
-      <input type="email" id="applicantEmail" name="email" placeholder="Email Address" required>
-      <input type="text" name="phone" placeholder="Phone Number" required>
-      <input type="text" name="license" placeholder="Driver's License Number" required>
+      <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+      <input type="email" id="email" name="email" placeholder="Email Address" required>
+      <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+      <input type="text" id="license" name="license" placeholder="Driver's License #" required>
       <button type="submit">Submit Application</button>
     </form>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 ABC Logistic LLC · Professional Delivery Services</p>
+  <footer style="background:#002147; color:#fff; text-align:center; padding:15px;">
+    © 2025 ABC Logistic LLC
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
   <script>
-    function toggleFaq(el) {
-      const p = el.nextElementSibling;
-      p.style.display = (p.style.display === "block") ? "none" : "block";
-    }
+    (function(){
+      emailjs.init("vhgTnq8riUK29JBK6"); // Your EmailJS Public Key
+    })();
+
+    document.getElementById("applyForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      localStorage.setItem("applicantEmail", email); // Save for admin page
+
+      emailjs.sendForm("service_2bhwn1u", "template_jqo8csc", this)
+        .then(function() {
+          window.location.href = "apply-success.html"; // Redirect on success
+        }, function(error) {
+          alert("❌ Error. Please try again.");
+          console.log(error);
+        });
+    });
   </script>
 </body>
 </html>
