@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ | ABC Logistic LLC</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Header -->
   <header class="site-header">
     <img src="logo.png" alt="ABC Logistic LLC Logo" class="logo">
     <nav>
@@ -20,77 +20,42 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero small-hero">
     <div class="hero-text">
-      <h1>Frequently Asked Questions</h1>
-      <p>Everything you need to know about driving with ABC Logistic LLC</p>
+      <h1>Driver Hiring FAQ</h1>
+      <p>Answers to common questions from new applicants.</p>
     </div>
   </section>
 
-  <!-- FAQ Section -->
   <section class="faq-section">
     <div class="faq-item">
-      <button class="faq-question">📦 How many packages will I deliver?</button>
-      <div class="faq-answer">
-        <p>Drivers are guaranteed a minimum of 100 packages per day. The more you deliver, the more you earn.</p>
-      </div>
+      <button class="faq-question">Do I need my own car?</button>
+      <div class="faq-answer"><p>Yes. Drivers must have their own reliable vehicle, valid driver’s license, insurance, and registration.</p></div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-question">💵 How much can I make?</button>
-      <div class="faq-answer">
-        <p>On average, drivers can earn between <strong>$180 – $360 per day</strong> depending on packages delivered.</p>
-      </div>
+      <button class="faq-question">What shifts are available?</button>
+      <div class="faq-answer"><p>1st & 2nd Shift. You can choose part-time (3 days) or full-time (4 days) per week.</p></div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-question">📅 When do I get paid?</button>
-      <div class="faq-answer">
-        <p>Payments are made <strong>weekly, every Friday</strong>.</p>
-      </div>
+      <button class="faq-question">How much do I get paid?</button>
+      <div class="faq-answer"><p>1st Shift → $1.80 per package + $0.50 extra packages.<br>2nd Shift → $1.60 per package + $0.50 extra packages.</p></div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-question">📋 What are the requirements?</button>
-      <div class="faq-answer">
-        <ul>
-          <li>Driver’s License</li>
-          <li>Car Insurance</li>
-          <li>Vehicle Registration</li>
-          <li>Social Security Number or ITIN</li>
-          <li>Emergency Contact Number</li>
-        </ul>
-      </div>
+      <button class="faq-question">When do I get paid?</button>
+      <div class="faq-answer"><p>Pay is issued weekly (every Friday).</p></div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-question">🚙 What vehicles are preferred?</button>
-      <div class="faq-answer">
-        <p>We accept Small Cars, SUVs, Pickup Trucks, and Cargo Vans.</p>
-      </div>
+      <button class="faq-question">Where’s the warehouse?</button>
+      <div class="faq-answer"><p>Troy, MI 48083.</p></div>
     </div>
-
     <div class="faq-item">
-      <button class="faq-question">📍 Where do you deliver?</button>
-      <div class="faq-answer">
-        <p>We deliver all around Metro Detroit: Romulus, Warren, Saint Clair Shores, Novi, Brighton, and surrounding cities.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">🧾 Is this W2 or 1099?</button>
-      <div class="faq-answer">
-        <p>This is a <strong>1099 independent contractor</strong> position.</p>
-      </div>
+      <button class="faq-question">Is this W2 or 1099?</button>
+      <div class="faq-answer"><p>This is a 1099 independent contractor position.</p></div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 ABC Logistic LLC • All Rights Reserved</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
