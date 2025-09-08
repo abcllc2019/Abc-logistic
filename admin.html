@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard – ABC Logistic LLC</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — ABC Logistic LLC</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+<header class="site-header">
+  <div class="container header-inner">
+    <img src="logo.png" class="logo" alt="ABC Logistic LLC"/>
+    <nav class="nav"><a href="index.html">Home</a></nav>
+  </div>
+</header>
 
-  <header style="background:#002147; color:#fff; padding:15px; display:flex; align-items:center;">
-    <img src="logo.png" alt="ABC Logistic Logo" style="height:50px; margin-right:15px;">
-    <h1>Admin Dashboard</h1>
-  </header>
+<section class="container">
+  <div class="card form">
+    <h1>Approve Applicant & Send Onboarding</h1>
+    <label>Applicant Name
+      <input type="text" id="admin_name" placeholder="Jane Doe" required>
+    </label>
+    <label>Applicant Email
+      <input type="email" id="admin_email" placeholder="applicant@example.com" required>
+    </label>
+    <button class="btn btn-primary" id="sendBtn">Send Onboarding Email</button>
+    <p class="form-note" id="adminMsg"></p>
+  </div>
+</section>
 
-  <section style="padding:30px; max-width:800px; margin:auto;">
-    <h2>Pending Applications</h2>
-    <div id="applicantsList"></div>
-  </section>
+<footer class="site-footer">
+  <div class="container footer-inner">© <span id="year"></span> ABC Logistic LLC</div>
+</footer>
 
-  <footer style="background:#002147; color:#fff; text-align:center; padding:15px;">
-    © 2025 ABC Logistic LLC · Admin Only
-  </footer>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){ emailjs.init("vhgTnq8riUK29JBK6"); })();
+</script>
+<script>
+  const sendBtn = document.getElementById('sendBtn');
+  const aMsg = document.getElementById('adminMsg');
 
-  <!-- EmailJS + Applicant Loader -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("vhgTnq8riUK29JBK6"); // Your EmailJS Public Key
-    })();
-
-    // Load applicants from localStorage
-    window.onload = function() {
-      let applicants = JSON.parse(localStorage.getItem("applicants")) || [];
-      let savedEmail = localStorage.getItem("applicantEmail");
-      let container = document.getElementById("applicantsList");
-
-      if (savedEmail) {
-        container.innerHTML += `
-          <div style="border:1px solid #ccc; padding:15px; margin:10px; border-radius:8px;">
-            <p><strong>Email:</strong> ${savedEmail}</p>
-            <button onclick="sendOnboardingEmail('${savedEmail}')">
-              ✅ Approve & Send Onboarding Packet
-            </button>
-          </div>
-        `;
-      } else {
-        container.innerHTML = "<p>No applications yet.</p>";
-      }
-    }
-
-    // Function to send onboarding email
-    function sendOnboardingEmail(email) {
-      emailjs.send("service_2bhwn1u", "template_3ffr751", {
-        to_email: email
-      }).then(function() {
-        alert("✅ Onboarding Packet sent to " + email);
-      }, function(error) {
-        alert("❌ Failed to send email.");
-        console.log(error);
+  sendBtn.addEventListener('click', async () => {
+    const name = document.getElementById('admin_name').value.trim();
+    const email = document.getElementById('admin_email').value.trim();
+    if(!name || !email){ aMsg.textContent = "Enter name and email."; return; }
+    aMsg.textContent = "Sending…";
+    try {
+      // template for welcome/onboarding packet
+      await emailjs.send("service_2bhwn1u", "template_3ffr751", {
+        name, email
       });
+      aMsg.textContent = "Onboarding email sent!";
+    } catch (e) {
+      console.error(e);
+      aMsg.textContent = "Failed to send. Check EmailJS settings and try again.";
     }
-  </script>
+  });
+</script>
+<script src="script.js"></script>
 </body>
 </html>
