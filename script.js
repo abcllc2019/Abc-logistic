@@ -39,4 +39,28 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
   }
+
+  // FAQ Accordion
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach(button => {
+    button.addEventListener("click", () => {
+      const answer = button.nextElementSibling;
+
+      document.querySelectorAll(".faq-answer").forEach(a => {
+        if (a !== answer) {
+          a.style.maxHeight = null;
+          a.style.padding = "0 15px";
+        }
+      });
+
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+        answer.style.padding = "0 15px";
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.style.padding = "15px";
+      }
+    });
+  });
 });
