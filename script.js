@@ -1,52 +1,47 @@
 // Initialize EmailJS
 (function() {
-  emailjs.init("vhgTnq8riUK29JBK6"); // Your Public Key
+  emailjs.init("vhgTnq8riUK29JBK6"); // Replace with your actual EmailJS user ID
 })();
 
-// Handle application form submission
-document.addEventListener("DOMContentLoaded", function () {
-  const applyForm = document.querySelector(".apply-form");
+// Application Form Submission
+document.addEventListener("DOMContentLoaded", () => {
+  const applyForm = document.getElementById("applyForm");
+  const contactForm = document.getElementById("contactForm");
 
   if (applyForm) {
-    applyForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+    applyForm.addEventListener("submit", function(event) {
+      event.preventDefault();
 
       emailjs.sendForm("service_2bhwn1u", "template_jqo8csc", this)
-        .then(function () {
-          alert("✅ Application sent successfully!");
-          window.location.href = "apply-success.html";
-        }, function (error) {
-          console.error("❌ Failed to send application:", error);
-          alert("Something went wrong. Please try again.");
+        .then(() => {
+          alert("✅ Application submitted successfully!");
+          applyForm.reset();
+        }, (err) => {
+          alert("❌ Error: " + JSON.stringify(err));
         });
     });
   }
 
-  // Handle contact form submission
-  const contactForm = document.querySelector(".contact-form");
-
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+    contactForm.addEventListener("submit", function(event) {
+      event.preventDefault();
 
       emailjs.sendForm("service_2bhwn1u", "template_3ffr751", this)
-        .then(function () {
-          alert("✅ Your message has been sent!");
+        .then(() => {
+          alert("✅ Message sent successfully!");
           contactForm.reset();
-        }, function (error) {
-          console.error("❌ Failed to send message:", error);
-          alert("Something went wrong. Please try again.");
+        }, (err) => {
+          alert("❌ Error: " + JSON.stringify(err));
         });
     });
   }
 
   // FAQ Accordion
-  const faqQuestions = document.querySelectorAll(".faq-question");
-
-  faqQuestions.forEach(button => {
+  document.querySelectorAll(".faq-question").forEach(button => {
     button.addEventListener("click", () => {
       const answer = button.nextElementSibling;
 
+      // Close others
       document.querySelectorAll(".faq-answer").forEach(a => {
         if (a !== answer) {
           a.style.maxHeight = null;
@@ -54,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
+      // Toggle current
       if (answer.style.maxHeight) {
         answer.style.maxHeight = null;
         answer.style.padding = "0 15px";
