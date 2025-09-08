@@ -1,52 +1,96 @@
-<!-- FAQ Section -->
-<section id="faq" class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-
-  <div class="faq-item">
-    <button class="faq-question">📦 How many packages will I deliver?</button>
-    <div class="faq-answer">
-      <p>Drivers are guaranteed a minimum of 100 packages per day. The more you deliver, the more you earn.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">💵 How much can I make?</button>
-    <div class="faq-answer">
-      <p>On average, drivers can earn between <strong>$180 - $360 per day</strong> depending on packages delivered.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">📅 When do I get paid?</button>
-    <div class="faq-answer">
-      <p>Payments are made <strong>weekly, every Friday</strong>.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">📋 What are the requirements?</button>
-    <div class="faq-answer">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | ABC Logistic LLC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <img src="logo.png" alt="ABC Logistic LLC Logo" class="logo">
+    <nav>
       <ul>
-        <li>Driver’s License</li>
-        <li>Car Insurance</li>
-        <li>Vehicle Registration</li>
-        <li>Social Security Number or ITIN</li>
-        <li>Emergency Contact Number</li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div class="faq-item">
-    <button class="faq-question">🚙 What vehicles are preferred?</button>
-    <div class="faq-answer">
-      <p>We accept Small Cars, SUVs, Pickup Trucks, and Cargo Vans.</p>
+  <!-- Hero Section -->
+  <section class="hero small-hero">
+    <div class="hero-text">
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about driving with ABC Logistic LLC</p>
     </div>
-  </div>
+  </section>
 
-  <div class="faq-item">
-    <button class="faq-question">📍 Where do you deliver?</button>
-    <div class="faq-answer">
-      <p>We deliver all around Metro Detroit: Romulus, Warren, Saint Clair Shores, Novi, Brighton, and surrounding cities.</p>
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-item">
+      <button class="faq-question">📦 How many packages will I deliver?</button>
+      <div class="faq-answer">
+        <p>Drivers are guaranteed a minimum of 100 packages per day. The more you deliver, the more you earn.</p>
+      </div>
     </div>
-  </div>
-</section>
+
+    <div class="faq-item">
+      <button class="faq-question">💵 How much can I make?</button>
+      <div class="faq-answer">
+        <p>On average, drivers can earn between <strong>$180 – $360 per day</strong> depending on packages delivered.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">📅 When do I get paid?</button>
+      <div class="faq-answer">
+        <p>Payments are made <strong>weekly, every Friday</strong>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">📋 What are the requirements?</button>
+      <div class="faq-answer">
+        <ul>
+          <li>Driver’s License</li>
+          <li>Car Insurance</li>
+          <li>Vehicle Registration</li>
+          <li>Social Security Number or ITIN</li>
+          <li>Emergency Contact Number</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">🚙 What vehicles are preferred?</button>
+      <div class="faq-answer">
+        <p>We accept Small Cars, SUVs, Pickup Trucks, and Cargo Vans.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">📍 Where do you deliver?</button>
+      <div class="faq-answer">
+        <p>We deliver all around Metro Detroit: Romulus, Warren, Saint Clair Shores, Novi, Brighton, and surrounding cities.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">🧾 Is this W2 or 1099?</button>
+      <div class="faq-answer">
+        <p>This is a <strong>1099 independent contractor</strong> position.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ABC Logistic LLC • All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
