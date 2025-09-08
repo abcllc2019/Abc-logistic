@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | ABC Logistic LLC</title>
+  <title>Contact - ABC Logistic LLC</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <img src="logo.png" alt="ABC Logistic LLC Logo" class="logo">
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="ABC Logistic Logo" class="logo">
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -20,36 +20,32 @@
     </nav>
   </header>
 
-  <section class="hero small-hero">
-    <div class="hero-text">
-      <h1>Contact Us</h1>
-      <p>Have questions? We’re here to help.</p>
-    </div>
-  </section>
+  <!-- Contact Section -->
+  <main>
+    <h1>Contact Us</h1>
+    <p>If you have questions about driving with ABC Logistic LLC, reach out to us:</p>
 
-  <section class="contact-section">
-    <h2>📬 Get in Touch</h2>
-    <p>Fill out the form below or call us at <strong>(248) 721-5235</strong></p>
+    <p><strong>Phone:</strong> (248) 721-5235</p>
+    <p><strong>Email:</strong> abcllc@abclogisticdelivery.com</p>
 
-    <form id="contactForm" class="contact-form">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+    <h2>Send Us a Message</h2>
+    <form class="contact-form">
+      <label>Your Name</label>
+      <input type="text" name="name" required>
 
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
+      <label>Your Email</label>
+      <input type="email" name="email" required>
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone">
-
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
+      <label>Message</label>
+      <textarea name="message" rows="5" required></textarea>
 
       <button type="submit" class="btn">Send Message</button>
     </form>
-  </section>
+  </main>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 ABC Logistic LLC • All Rights Reserved</p>
+    <p>&copy; 2025 ABC Logistic LLC • All Rights Reserved</p>
   </footer>
 </body>
 </html>
