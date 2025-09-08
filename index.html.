@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ABC Logistic LLC</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <!-- Header -->
@@ -12,7 +13,7 @@
     <img src="logo.png" alt="ABC Logistic LLC Logo" class="logo">
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="apply.html">Apply</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -20,35 +21,51 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Banner -->
   <section class="hero">
     <img src="driver-hero.jpg" alt="Delivery Driver" class="hero-image">
     <div class="hero-text">
-      <h1>Now Hiring Delivery Drivers</h1>
-      <p>Earn $180 – $360 per day • Flexible Shifts • Weekly Pay</p>
-      <p class="highlight">📍 Delivering All Around Metro Detroit</p>
+      <h1>Drive with ABC Logistic LLC</h1>
+      <p>Deliver packages. Earn $180 – $360 per day. Choose your own schedule.</p>
       <a href="apply.html" class="btn">Apply Now</a>
     </div>
   </section>
 
-  <!-- Service Areas -->
-  <section class="services">
-    <h2>📍 Our Service Areas</h2>
-    <p>We proudly deliver all around Metro Detroit, including:</p>
+  <!-- Requirements -->
+  <section class="requirements">
+    <h2>📋 Requirements to Apply</h2>
     <ul>
-      <li>Romulus</li>
-      <li>Warren</li>
-      <li>Saint Clair Shores</li>
-      <li>Novi</li>
-      <li>Brighton</li>
-      <li>Surrounding Cities</li>
+      <li>Driver’s License</li>
+      <li>Car Insurance</li>
+      <li>Vehicle Registration</li>
+      <li>Social Security Card or ITIN</li>
+      <li>Contact Number</li>
+      <li>Emergency Number</li>
     </ul>
   </section>
 
-  <!-- Preferred Vehicles -->
+  <!-- Pay Info -->
+  <section class="pay-info">
+    <h2>💰 How You Get Paid</h2>
+    <p>We guarantee drivers a minimum of 100 packages per route.</p>
+    <ul>
+      <li>100 packages → $180/day</li>
+      <li>150 packages → $270/day</li>
+      <li>200 packages → $360/day</li>
+    </ul>
+    <p>You control your paycheck based on how many packages you deliver each week.</p>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="service-areas">
+    <h2>📍 Service Areas</h2>
+    <p>We deliver all around the <strong>Metro Detroit area</strong>, including:</p>
+    <p>Romulus • Warren • Saint Clair Shores • Novi • Brighton • Surrounding Cities</p>
+  </section>
+
+  <!-- Vehicles -->
   <section class="vehicles">
     <h2>🚗 Preferred Vehicles</h2>
-    <p>We welcome drivers with the following vehicles:</p>
     <ul>
       <li>Small Cars</li>
       <li>SUVs</li>
