@@ -1,160 +1,123 @@
-/* Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
 }
 
 /* Header */
 .site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
   background: #002147;
   color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo {
-  height: 60px;
+.site-header .logo {
+  height: 50px;
 }
 
 .site-header nav ul {
   list-style: none;
   display: flex;
+  gap: 20px;
 }
 
-.site-header nav ul li {
-  margin-left: 20px;
-}
-
-.site-header nav ul li a {
+.site-header nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
-.site-header nav ul li a:hover {
-  text-decoration: underline;
+.site-header nav a.active,
+.site-header nav a:hover {
+  color: #f7931e;
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  width: 100%;
-  height: 75vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
+  height: 70vh;
   overflow: hidden;
 }
 
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero img.hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
-  z-index: -1;
+  filter: brightness(70%);
 }
 
-.hero-text {
-  position: relative;
-  max-width: 800px;
-  padding: 20px;
+.hero .hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 15px;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.highlight {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffcc00;
-  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 .btn {
-  background: #ff6600;
+  background: #f7931e;
   color: #fff;
-  padding: 12px 25px;
-  border-radius: 5px;
-  text-decoration: none;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
   font-weight: bold;
-  display: inline-block;
-  margin-top: 20px;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .btn:hover {
-  background: #e65500;
+  background: #d97b10;
 }
 
-/* Services + Vehicles Sections */
-.services, .vehicles {
-  padding: 50px 20px;
-  background: #f9f9f9;
-}
-
-.services h2, .vehicles h2 {
-  color: #002147;
-  margin-bottom: 15px;
-}
-
-.services ul, .vehicles ul {
-  list-style: none;
-  padding: 0;
-}
-
-.services li, .vehicles li {
-  padding: 5px 0;
-  font-size: 16px;
-}
-
-/* Footer */
-footer {
-  background: #002147;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 20px;
-}
-/* Apply Page */
+/* Small Hero (subpages) */
 .small-hero {
   height: 40vh;
 }
 
-.apply-form-section {
+/* Sections */
+section {
   padding: 50px 20px;
-  max-width: 700px;
+  max-width: 900px;
   margin: auto;
 }
 
-.apply-form-section h2 {
+section h2 {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #002147;
 }
 
-.apply-form-section p {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #444;
+section ul {
+  list-style: disc;
+  margin: 15px auto;
+  padding-left: 40px;
 }
 
-.application-form {
+/* Forms */
+.application-form,
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -164,19 +127,70 @@ footer {
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
-.application-form label {
+.application-form label,
+.contact-form label {
   font-weight: bold;
   color: #002147;
 }
 
-.application-form input {
+.application-form input,
+.contact-form input,
+.contact-form textarea {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 
-.application-form button {
-  margin-top: 15px;
-  font-size: 1rem;
+.contact-form textarea {
+  resize: none;
 }
 
+/* FAQ Accordion */
+.faq-section {
+  max-width: 700px;
+  margin: auto;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: #002147;
+  color: #fff;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  background: #f7931e;
+}
+
+.faq-answer {
+  background: #fff;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s ease;
+  padding: 0 15px;
+}
+
+.faq-answer p {
+  padding: 15px 0;
+}
+
+/* Footer */
+footer {
+  background: #002147;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
