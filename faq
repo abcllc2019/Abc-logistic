@@ -1,66 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FAQ — ABC Logistic LLC</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-<header class="site-header">
-  <div class="container header-inner">
-    <img src="logo.png" class="logo" alt="ABC Logistic LLC"/>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="apply.html">Apply</a>
-      <a class="active" href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+<!-- FAQ Section -->
+<section id="faq" class="faq-section">
+  <h2>Frequently Asked Questions</h2>
 
-<section class="container">
-  <h1>How Pay Works</h1>
-  <p class="lead">We provide a <strong>minimum of 100 packages</strong> per route. Your earnings scale with packages delivered:</p>
-
-  <div class="cards three">
-    <div class="card"><h3>100 packages</h3><p class="big-amount">$180 / day</p></div>
-    <div class="card"><h3>150 packages</h3><p class="big-amount">$270 / day</p></div>
-    <div class="card"><h3>200 packages</h3><p class="big-amount">$360 / day</p></div>
+  <div class="faq-item">
+    <button class="faq-question">📦 How many packages will I deliver?</button>
+    <div class="faq-answer">
+      <p>Drivers are guaranteed a minimum of 100 packages per day. The more you deliver, the more you earn.</p>
+    </div>
   </div>
 
-  <ul class="faq">
-    <li>
-      <h3>What is the per-package rate?</h3>
-      <p>Baseline example uses <strong>$1.80 per package</strong>. Consecutive packages to the same address add <strong>+$0.50 each</strong>. Second-shift base may vary.</p>
-    </li>
-    <li>
-      <h3>When do I get paid?</h3>
-      <p>Weekly, every Friday.</p>
-    </li>
-    <li>
-      <h3>Do I choose my schedule?</h3>
-      <p>Yes. We offer flexible shifts — pick the days that work for you.</p>
-    </li>
-    <li>
-      <h3>W-2 or 1099?</h3>
-      <p>1099 Independent Contractor.</p>
-    </li>
-    <li>
-      <h3>What vehicles work best?</h3>
-      <p>Small cars, SUVs, pickup trucks, and cargo vans.</p>
-    </li>
-  </ul>
+  <div class="faq-item">
+    <button class="faq-question">💵 How much can I make?</button>
+    <div class="faq-answer">
+      <p>On average, drivers can earn between <strong>$180 - $360 per day</strong> depending on packages delivered.</p>
+    </div>
+  </div>
 
-  <div class="center">
-    <a class="btn btn-primary" href="apply.html">Apply Now</a>
+  <div class="faq-item">
+    <button class="faq-question">📅 When do I get paid?</button>
+    <div class="faq-answer">
+      <p>Payments are made <strong>weekly, every Friday</strong>.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">📋 What are the requirements?</button>
+    <div class="faq-answer">
+      <ul>
+        <li>Driver’s License</li>
+        <li>Car Insurance</li>
+        <li>Vehicle Registration</li>
+        <li>Social Security Number or ITIN</li>
+        <li>Emergency Contact Number</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">🚙 What vehicles are preferred?</button>
+    <div class="faq-answer">
+      <p>We accept Small Cars, SUVs, Pickup Trucks, and Cargo Vans.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">📍 Where do you deliver?</button>
+    <div class="faq-answer">
+      <p>We deliver all around Metro Detroit: Romulus, Warren, Saint Clair Shores, Novi, Brighton, and surrounding cities.</p>
+    </div>
   </div>
 </section>
-
-<footer class="site-footer">
-  <div class="container footer-inner">© <span id="year"></span> ABC Logistic LLC</div>
-</footer>
-<script src="script.js"></script>
-</body>
-</html>
