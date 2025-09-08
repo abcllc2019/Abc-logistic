@@ -1,120 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ABC Logistic LLC — Drive With Us</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABC Logistic LLC</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <img src="logo.png" alt="ABC Logistic LLC" class="logo"/>
-      <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="apply.html">Apply</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+  <!-- Header -->
+  <header class="header">
+    <img src="logo.png" alt="ABC Logistic LLC Logo" class="logo">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#apply">Apply</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <h1>Drive With ABC Logistic LLC</h1>
-        <p class="lead">Flexible shifts. Weekly pay. Choose your schedule and build your paycheck by the number of packages you deliver.</p>
-        <a class="btn btn-primary" href="apply.html">Start Application</a>
-      </div>
-      <div class="hero-art">
-        <!-- Upload a friendly stock photo as driver-hero.jpg -->
-        <img src="driver-hero.jpg" alt="Smiling delivery driver" />
-      </div>
-    </div>
-    <div class="hero-badges">
-      <div>Weekly Pay</div>
-      <div>Flexible Shifts</div>
-      <div>1099 Contractor</div>
-    </div>
+    <h1>Earn $180 – $360 Per Day</h1>
+    <p>Flexible Schedules • Weekly Pay • Independent Contractor</p>
+    <img src="driver-hero.jpg" alt="Delivery Driver" class="hero-img">
+    <a href="#apply" class="btn-primary">Apply Now</a>
   </section>
 
-  <section class="strip cta-strip">
-    <div class="container">
-      <h2>Earn $180 – $360 per day</h2>
-      <p>We provide a minimum of 100 packages per route. Your daily earnings scale with how many you deliver.</p>
-      <div class="cards three">
-        <div class="card">
-          <h3>100 Packages</h3>
-          <p class="big-amount">$180 / day</p>
-          <p>Baseline example</p>
-        </div>
-        <div class="card">
-          <h3>150 Packages</h3>
-          <p class="big-amount">$270 / day</p>
-          <p>Deliver more, earn more</p>
-        </div>
-        <div class="card">
-          <h3>200 Packages</h3>
-          <p class="big-amount">$360 / day</p>
-          <p>Top daily earnings</p>
-        </div>
-      </div>
+  <!-- Apply Section -->
+  <section id="apply" class="apply-section">
+    <h2>Apply Now</h2>
+    <form class="apply-form">
+      <label>Full Name</label>
+      <input type="text" name="fullName" required>
 
-      <div class="calc">
-        <h4>Quick Earnings Estimator</h4>
-        <form id="calcForm">
-          <label>Packages Today
-            <input type="number" id="pkgInput" min="0" step="1" placeholder="e.g., 125" required>
-          </label>
-          <button class="btn btn-light" type="submit">Estimate</button>
-          <output id="calcOut"></output>
-        </form>
-        <small>Estimator uses $1.80 per package baseline. Consecutive stops to the same address add +$0.50 each.</small>
-      </div>
-    </div>
+      <label>Email Address</label>
+      <input type="email" name="email" required>
+
+      <label>Phone Number</label>
+      <input type="text" name="phone" required>
+
+      <label>Driver’s License #</label>
+      <input type="text" name="driversLicense" required>
+
+      <label>Car Insurance</label>
+      <input type="text" name="insurance" required>
+
+      <label>Vehicle Registration</label>
+      <input type="text" name="registration" required>
+
+      <label>SSN / ITIN</label>
+      <input type="text" name="ssn" required>
+
+      <label>Emergency Contact Number</label>
+      <input type="text" name="emergencyContact" required>
+
+      <button type="submit">Submit Application</button>
+    </form>
   </section>
 
-  <section class="container two-col">
-    <div>
-      <h2>Service Areas</h2>
-      <p>We deliver all around the Metro Detroit area:</p>
-      <ul class="pill-list">
-        <li>Romulus</li><li>Warren</li><li>Saint Clair Shores</li>
-        <li>Novi</li><li>Brighton</li><li>Surrounding Cities</li>
+  <!-- Service Areas -->
+  <section class="service-areas">
+    <h2>📍 Service Areas</h2>
+    <p>We deliver all around the Metro Detroit area:</p>
+    <p><strong>Romulus • Warren • Saint Clair Shores • Novi • Brighton • Surrounding Cities</strong></p>
+  </section>
+
+  <!-- Preferred Vehicles -->
+  <section class="vehicles">
+    <h2>🚗 Preferred Vehicles</h2>
+    <ul>
+      <li>Small Cars</li>
+      <li>SUVs</li>
+      <li>Pickup Trucks</li>
+      <li>Cargo Vans</li>
+    </ul>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>📦 How many packages will I deliver?</h3>
+      <p>Drivers are guaranteed a minimum of 100 packages per day. The more you deliver, the more you earn.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>💵 How much can I make?</h3>
+      <p>On average, drivers can earn between <strong>$180 - $360 per day</strong> depending on packages delivered.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📅 When do I get paid?</h3>
+      <p>Payments are made <strong>weekly, every Friday</strong>.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📋 What are the requirements?</h3>
+      <ul>
+        <li>Driver’s License</li>
+        <li>Car Insurance</li>
+        <li>Vehicle Registration</li>
+        <li>Social Security Number or ITIN</li>
+        <li>Emergency Contact Number</li>
       </ul>
     </div>
-    <div>
-      <h2>Preferred Vehicles</h2>
-      <ul class="icon-list">
-        <li>Small Cars</li>
-        <li>SUVs</li>
-        <li>Pickup Trucks</li>
-        <li>Cargo Vans</li>
-      </ul>
-      <p>Reliable vehicle, valid license, insurance, and registration required.</p>
+
+    <div class="faq-item">
+      <h3>🚙 What vehicles are preferred?</h3>
+      <p>We accept Small Cars, SUVs, Pickup Trucks, and Cargo Vans.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📍 Where do you deliver?</h3>
+      <p>We deliver all around Metro Detroit: Romulus, Warren, Saint Clair Shores, Novi, Brighton, and surrounding cities.</p>
     </div>
   </section>
 
-  <section class="strip">
-    <div class="container center">
-      <h2>Ready to get started?</h2>
-      <a class="btn btn-primary" href="apply.html">Apply Now</a>
-    </div>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>📞 <a href="tel:2487215235">248-721-5235</a></p>
+    <p>📧 <a href="mailto:abcllc@abclogisticdelivery.com">abcllc@abclogisticdelivery.com</a></p>
+
+    <form class="contact-form">
+      <label>Your Name</label>
+      <input type="text" name="from_name" required>
+
+      <label>Your Email</label>
+      <input type="email" name="reply_to" required>
+
+      <label>Your Message</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> ABC Logistic LLC</div>
-      <div class="footer-links">
-        <a href="apply.html">Apply</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 ABC Logistic LLC</p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
